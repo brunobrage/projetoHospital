@@ -9,12 +9,14 @@ const kGrey3 = Color(0xFFEAEAEA);
 const kBlack = Color(0xFF1C1C1C);
 
 var kNonActiveTabStyle = GoogleFonts.roboto(
+  // ignore: prefer_const_constructors
   textStyle: TextStyle(
     fontSize: 14.0,
     color: kGrey2,
   ),
 );
 var kActiveTabStyle = GoogleFonts.roboto(
+  // ignore: prefer_const_constructors
   textStyle: TextStyle(
     fontSize: 16.0,
     color: kBlack,
@@ -22,6 +24,7 @@ var kActiveTabStyle = GoogleFonts.roboto(
   ),
 );
 var kCategoryTitle = GoogleFonts.roboto(
+  // ignore: prefer_const_constructors
   textStyle: TextStyle(
     fontSize: 14.0,
     color: kGrey1,
@@ -29,12 +32,14 @@ var kCategoryTitle = GoogleFonts.roboto(
   )
 );
 var kDetailContent = GoogleFonts.roboto(
+  // ignore: prefer_const_constructors
   textStyle: TextStyle(
     fontSize: 14.0,
     color: kGrey2,
   )
 );
 var kTitleCard = GoogleFonts.roboto(
+  // ignore: prefer_const_constructors
   textStyle: TextStyle(
     fontSize: 18.0,
     color: kBlack,

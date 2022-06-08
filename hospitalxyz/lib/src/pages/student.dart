@@ -1,43 +1,42 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, avoid_unnecessary_containers
-import 'package:hospitalxyz/src/service/addEditPatient.dart';
-import 'package:hospitalxyz/src/service/patientService.dart';
+import 'package:hospitalxyz/src/models/student.dart';
+import 'package:hospitalxyz/src/service/addEditStudent.dart';
+import 'package:hospitalxyz/src/service/studentService.dart';
 import 'package:flutter/material.dart';
 
-import '../models/patient.dart';
-
-class PatientList extends StatefulWidget {
+class StudentList extends StatefulWidget {
   @override
-  _PatientListState createState() => _PatientListState();
+  _StudentListState createState() => _StudentListState();
 }
 
-class _PatientListState extends State<PatientList> {
-   List<Patient>patientList;
+class _StudentListState extends State<StudentList> {
+   List<Student>studentList;
 
   bool loading = true;
 
-  getAllPatient() async {
-   patientList = await PatientService().getPatient();
+  getAllStudents() async {
+   studentList = await StudentService().getStudent();
     setState(() {
       loading = false;
     });
    // print("user : ${clientesList.length}");
   }
 
-  delete(Patient patient) async {
-    await PatientService().deletePatient(patient);
+  delete(Student student) async {
+    await StudentService().deleteStudent(student);
     setState(() {
       loading = false;
-      getAllPatient();
+      getAllStudents();
     });
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: const Text("Paciente deletado!")),
+        SnackBar(content: const Text("Aluno deletado!")),
       );
   }
 
   @override
   void initState() {
     super.initState();
-    getAllPatient();
+    getAllStudents();
   }
 
   @override
@@ -46,7 +45,7 @@ class _PatientListState extends State<PatientList> {
       backgroundColor: Colors.blue[50],
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Lista de Pacientes'),
+        title: Text('Lista de Alunos'),
         actions: <Widget>[
           IconButton(
             
@@ -56,9 +55,9 @@ class _PatientListState extends State<PatientList> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => AddEditPatient(),
+                  builder: (context) => AddEditStudent(),
                 ),
-              ).then((value) => getAllPatient());
+              ).then((value) => getAllStudents());
             },
           ),
         ],
@@ -69,10 +68,10 @@ class _PatientListState extends State<PatientList> {
                 child: CircularProgressIndicator(),
               )
             : ListView.builder(
-                itemCount: patientList.length,
+                itemCount: studentList.length,
                 physics: BouncingScrollPhysics(),
                 itemBuilder: (ctx, i) {
-                  Patient patient = patientList[i];
+                  Student student = studentList[i];
                   return ListTile(
                     contentPadding: EdgeInsets.all(10.0),
                     onTap: () {
@@ -80,23 +79,23 @@ class _PatientListState extends State<PatientList> {
                         context,
                         MaterialPageRoute(
                           builder: (context) =>
-                              AddEditPatient(paciente: patient, index: i),
+                              AddEditStudent(student: student, index: i),
                         ),
-                      ).then((value) => getAllPatient());
+                      ).then((value) => getAllStudents());
                     },
                     
                     leading: CircleAvatar(
-                      child: Text(patient.patientName[0]),
+                      child: Text(student.studentName[0]),
                     ),
-                    title: Text(patient.patientName),
-                    subtitle: Text(patient.patientCpf),
+                    title: Text(student.studentName),
+                    subtitle: Text(student.studentCpf),
                     trailing: IconButton(
                         icon: Icon(Icons.delete),
                         onPressed: () {
                           showDialog(
                             context: context,
                             builder: (ctx) => AlertDialog(
-                              title: Text('Excluir Paciente?'),
+                              title: Text('Excluir Aluno?'),
                               content: Text('Tem ceteza?'),
                               actions: <Widget>[
                                 TextButton(
@@ -113,7 +112,7 @@ class _PatientListState extends State<PatientList> {
                             ),
                           ).then((confirmed) {
                             if (confirmed) {
-                              delete(patient);
+                              delete(student);
                             }
                           });
                         }),

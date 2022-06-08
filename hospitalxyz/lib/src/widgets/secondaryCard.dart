@@ -1,10 +1,12 @@
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors_in_immutables, prefer_const_constructors, file_names
+
 import 'package:flutter/material.dart';
 import 'package:hospitalxyz/src/models/news.dart';
 import 'package:hospitalxyz/constants.dart';
 
 class SecondaryCard extends StatelessWidget {
   final News news;
-  SecondaryCard({required this.news});
+  SecondaryCard({ this.news});
 
   @override
   Widget build(BuildContext context) {

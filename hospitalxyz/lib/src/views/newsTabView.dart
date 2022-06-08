@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors, avoid_unnecessary_containers, use_key_in_widget_constructors, file_names
+
 import 'package:flutter/material.dart';
 import 'package:hospitalxyz/constants.dart';
 import 'package:hospitalxyz/src/models/news.dart';

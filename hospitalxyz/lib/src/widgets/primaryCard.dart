@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors_in_immutables, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors_in_immutables, use_key_in_widget_constructors, prefer_const_constructors, file_names
 
 import 'package:flutter/material.dart';
 import 'package:hospitalxyz/src/models/news.dart';
@@ -6,7 +6,7 @@ import 'package:hospitalxyz/constants.dart';
 
 class PrimaryCard extends StatelessWidget {
   final News news;
-  PrimaryCard({required this.news});
+  PrimaryCard({ this.news});
 
   @override
   Widget build(BuildContext context) {

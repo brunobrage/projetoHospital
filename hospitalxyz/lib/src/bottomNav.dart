@@ -1,7 +1,7 @@
 // ignore_for_file: unused_element, file_names, camel_case_types, use_key_in_widget_constructors, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:hospitalxyz/src/pages/speciality.dart';
+import 'package:hospitalxyz/src/pages/student.dart';
 import 'package:hospitalxyz/src/pages/surgery.dart';
 import 'package:hospitalxyz/src/pages/work.dart';
 import 'package:hospitalxyz/src/pages/user.dart';
@@ -23,10 +23,10 @@ class _homeState extends State<home> {
   int _currentIndex = 0;
   static List<Widget> pages = [
     HomePage(),
-    Speciality(),
+    StudentList(),
     Surgery(),
-    User(),
-    Work(),
+    PatientList(),
+    DoctorList(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -66,22 +66,22 @@ class _homeState extends State<home> {
             NavigationDestination(
               selectedIcon: Icon(Icons.medical_services),
               icon: Icon(Icons.medical_services_outlined),
-              label: 'Especialidades',
+              label: 'Alunos',
             ),
             NavigationDestination(
               selectedIcon: Icon(Icons.av_timer),
               icon: Icon(Icons.av_timer_outlined),
-              label: 'Horas',
+              label: 'Cirurgias',
             ),
             NavigationDestination(
               selectedIcon: Icon(Icons.eco),
               icon: Icon(Icons.eco_outlined),
-              label: 'Cirurgias',
+              label: 'Pacientes',
             ),
             NavigationDestination(
               selectedIcon: Icon(Icons.person),
               icon: Icon(Icons.person_outlined),
-              label: 'Eu',
+              label: 'Médicos',
             ),
           ],
         ),
