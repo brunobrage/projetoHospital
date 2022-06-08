@@ -5,13 +5,13 @@
   $doctorId = $_POST['doctorId'];
   $doctorName = $_POST['doctorName'];
   $doctorCpf = $_POST['doctorCpf'];
-  $doctorEmail = $_POST['doctorEmail'];
+  $doctorCrm = $_POST['doctorCrm'];
 
     //do something
-    $insert = $conn->query("UPDATE doctor SET 
+    $insert = $conn->query("UPDATE doctors SET 
     doctorName ='$doctorName', 
     doctorCpf ='$doctorCpf', 
-    doctorEmail ='$doctorEmail' WHERE doctorId =  '$doctorId'
+    doctorCrm ='$doctorCrm' WHERE doctorId =  '$doctorId'
       ");
         if ($insert){
             echo "Success";

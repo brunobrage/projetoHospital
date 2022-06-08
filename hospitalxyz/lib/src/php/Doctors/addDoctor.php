@@ -5,13 +5,13 @@
     $doctorId = $_POST['doctorId'];
     $doctorName = $_POST['doctorName'];
     $doctorCpf = $_POST['doctorCpf'];
-    $doctorEmail = $_POST['doctorEmail'];
+    $doctorCrm = $_POST['doctorCrm'];
     
-    $insert = $conn->query("INSERT INTO doctor(doctorName, doctorCpf,
-     doctorEmail) VALUES(
+    $insert = $conn->query("INSERT INTO doctors(doctorName, doctorCpf,
+     doctorCrm) VALUES(
         '$doctorName',
         '$doctorCpf',
-        '$doctorEmail',)");
+        '$doctorCrm')");
         if ($insert){
             echo "Success";
         }

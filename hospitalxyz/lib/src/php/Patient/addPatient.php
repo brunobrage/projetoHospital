@@ -11,7 +11,7 @@
      patientEmail) VALUES(
         '$patientName',
         '$patientCpf',
-        '$patientEmail',)");
+        '$patientEmail')");
         if ($insert){
             echo "Success";
         }

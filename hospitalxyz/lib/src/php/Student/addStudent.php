@@ -11,7 +11,7 @@
      studentEmail) VALUES(
         '$studentName',
         '$studentCpf',
-        '$studentEmail',)");
+        '$studentEmail')");
         if ($insert){
             echo "Success";
         }

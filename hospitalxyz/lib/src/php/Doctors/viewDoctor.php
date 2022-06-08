@@ -2,7 +2,7 @@
 
     require('configDoctor.php');
 
-    $result = $conn->query("SELECT * FROM doctor ORDER BY doctorName");
+    $result = $conn->query("SELECT * FROM doctors ORDER BY doctorName");
     $data = array();
     while ( $row = $result -> fetch_assoc()){
         $data[] = $row;
