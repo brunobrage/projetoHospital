@@ -24,7 +24,7 @@ class _homeState extends State<home> {
   static List<Widget> pages = [
     HomePage(),
     StudentList(),
-    Surgery(),
+    SurgeryList(),
     PatientList(),
     DoctorList(),
   ];

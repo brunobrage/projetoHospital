@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:hospitalxyz/src/models/doctor.dart';
-import 'package:email_validator/email_validator.dart';
 import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -29,7 +28,6 @@ class _AddEditDoctorState extends State<AddEditDoctor> {
   final TextEditingController doctorCrm = TextEditingController();
   final TextEditingController doctorCpf = TextEditingController();
 
-  bool _isValid = false;
   bool editMode = false;
 
   add(Doctor doutor) async {
@@ -39,7 +37,6 @@ class _AddEditDoctorState extends State<AddEditDoctor> {
       );
       Navigator.pop(context);
     });
-    //print("Cidadão Adicionado!");
   }
 
   update(Doctor doutor) async {
@@ -49,7 +46,6 @@ class _AddEditDoctorState extends State<AddEditDoctor> {
       );
       Navigator.pop(context);
     });
-    //print("Cidadão Adicionado!");
   }
 
   @override
@@ -147,6 +143,7 @@ class _AddEditDoctorState extends State<AddEditDoctor> {
                         },
                       ),
                     ),
+                    
                     ElevatedButton(
                       onPressed: () {
                         String cpf = doctorCpf.text;
