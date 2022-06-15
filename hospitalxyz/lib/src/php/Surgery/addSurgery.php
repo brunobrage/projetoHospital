@@ -11,7 +11,7 @@
      patientName) VALUES(
         '$surgeryName',
         '$doctorName',
-        '$patientName',)");
+        '$patientName')");
         if ($insert){
             echo "Success";
         }
